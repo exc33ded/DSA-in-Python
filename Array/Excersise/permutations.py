@@ -1,9 +1,14 @@
-def permutations(num):
-    if num < 0:
-        print('Permutation of ', num, 'is not defined!!')
-    elif num == 1 or num == 0:
-        print(1)
-    else:
-        print(permutations(num)*permutations(num-1))
-        
-permutations(5)
+# Permutation of list
+
+def permutations(lst1, lst2):
+    if len(lst1) != len(lst2):
+        return False
+    lst1.sort()
+    lst2.sort()
+    if lst1 == lst2:
+        return True
+    return False
+
+lst1 = [1,2,3]
+lst2 = [1,3,2]
+print(permutations(lst1, lst2))
