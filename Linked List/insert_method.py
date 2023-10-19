@@ -30,22 +30,54 @@ class LinkedList:
             self.tail.next = new_node
             self.tail = new_node
         self.length += 1
-
+      
     def insert(self, index, value):
         new_node = Node(value)
-        temp_node = self.head
-        for _ in range(index - 1):
-            temp_node = temp_node.next
-        new_node.next = temp_node.next
-        temp_node.next = new_node
+        # If index is out of bound
+        if index < 0 or index > self.length:
+            return False
+        # If Linked List is empty
+        if self.length == 0:
+            self.head = new_node
+            self.tail = new_node
+        # To insert at beginning 
+        elif index == 0:
+            new_node.next = self.head
+            self.head = new_node
+        # To insert anywhere
+        else:
+            temp_node = self.head
+            for _ in range(index - 1):
+                temp_node = temp_node.next
+            new_node.next = temp_node.next
+            temp_node.next = new_node
+        self.length += 1
+        return True
         
 new_LL = LinkedList()
+
+new_LL.insert(0, -100)
+
 new_LL.append(10)
 new_LL.append(20)
 new_LL.append(30)
 new_LL.append(40)
 
-print(new_LL.head.value)
-print(new_LL.tail.value)
-print(new_LL.length)
 print(new_LL)
+print(new_LL.length)
+
+new_LL.insert(1, 50)
+print(new_LL)
+print(new_LL.length)
+
+new_LL.insert(0, 60)
+print(new_LL)
+print(new_LL.length)
+
+new_LL.insert(-1, 160)
+print(new_LL)
+print(new_LL.length)
+
+new_LL.insert(8, 120)
+print(new_LL)
+print(new_LL.length)
