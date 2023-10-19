@@ -36,7 +36,8 @@ class LinkedList:
         temp_node = self.head
         for _ in range(index - 1):
             temp_node = temp_node.next
-        new_node
+        new_node.next = temp_node.next
+        temp_node.next = new_node
         
 new_LL = LinkedList()
 new_LL.append(10)
