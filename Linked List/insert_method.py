@@ -37,7 +37,7 @@ class LinkedList:
         if index < 0 or index > self.length:
             return False
         # If Linked List is empty
-        if self.length == 0:
+        elif self.length == 0:
             self.head = new_node
             self.tail = new_node
         # To insert at beginning 
