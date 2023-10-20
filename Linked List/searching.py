@@ -25,3 +25,26 @@ class LinkedList:
             print(current.value)
             current = current.next
             
+    def search(self, target):
+        current = self.head
+        index = 0
+        while current:
+            if current.value == target:
+                return index
+            current = current.next
+            index += 1
+        return -1
+            
+new_ll = LinkedList()
+
+new_ll.append(10)
+new_ll.append(20)
+new_ll.append(30)
+new_ll.append(40)
+new_ll.append(50)
+
+new_ll.show()
+print()
+      
+print(new_ll.search(30))          
+print(new_ll.search(60))          
