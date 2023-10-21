@@ -26,3 +26,13 @@ class LinkedList:
             self.tail.next = new_node
             self.tail = new_node
         self.length += 1
+    
+    def get(self, index):
+        if index == -1:
+            return self.tail
+        if index < -1 or index >= self.length:
+            return None
+        current = self.head
+        for _ in range(index):
+            current = current.next
+        return next
