@@ -24,6 +24,12 @@ class LinkedList:
         while current:
             print(current.value, end=" ")
             current = current.next
+            
+    def get(self, index):
+        current = self.head
+        for _ in range(index):
+            current = current.next
+        return current
 
 new_ll = LinkedList()
 new_ll.append(10)
@@ -33,3 +39,5 @@ new_ll.append(40)
 new_ll.append(50)
 
 new_ll.show()
+
+print(new_ll.get(2))
