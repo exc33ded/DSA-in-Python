@@ -36,3 +36,10 @@ class LinkedList:
         for _ in range(index):
             current = current.next
         return next
+
+    def set_value(self, index, value):
+        temp = self.get(index)
+        if temp:
+            temp.value = value
+            return True
+        return False
