@@ -10,3 +10,4 @@ class LinkedList:
         self.head = None
         self.tail = None
         self.length = 0
+        
