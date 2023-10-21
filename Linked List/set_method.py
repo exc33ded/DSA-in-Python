@@ -30,13 +30,13 @@ class LinkedList:
     def get(self, index):
         if index == -1:
             return self.tail
-        if index < -1 or index >= self.length:
+        elif index < -1 or index >= self.length:
             return None
         current = self.head
         for _ in range(index):
             current = current.next
-        return next
-
+        return current
+    
     def set_value(self, index, value):
         temp = self.get(index)
         if temp:
