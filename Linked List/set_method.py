@@ -11,3 +11,10 @@ class LinkedList:
         self.tail = None
         self.length = 0
         
+    def show(self):
+        current = self.head
+        while current:
+            print(current.value, end=" ")
+            current = current.next
+    
+    def perpend(self, value):
