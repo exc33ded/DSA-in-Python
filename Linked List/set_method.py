@@ -43,3 +43,15 @@ class LinkedList:
             temp.value = value
             return True
         return False
+    
+new_ll = LinkedList()
+new_ll.perpend(10)
+new_ll.perpend(20)
+new_ll.perpend(30)
+new_ll.perpend(40)
+new_ll.perpend(50)
+
+new_ll.show()
+
+print(new_ll.set_value(3, 100))
+new_ll.show()
