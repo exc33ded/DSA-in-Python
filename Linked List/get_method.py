@@ -26,6 +26,10 @@ class LinkedList:
             current = current.next
             
     def get(self, index):
+        if index == -1:
+            return self.tail
+        if index < -1 or index >= self.length:
+            return None
         current = self.head
         for _ in range(index):
             current = current.next
@@ -39,5 +43,8 @@ new_ll.append(40)
 new_ll.append(50)
 
 new_ll.show()
-
+print()
 print(new_ll.get(2))
+print(new_ll.get(-1))
+print(new_ll.get(-5))
+print(new_ll.get(9))
