@@ -19,3 +19,17 @@ class LinkedList:
             self.tail = new_node
         self.length += 1
         
+    def show(self):
+        current = self.head
+        while current:
+            print(current.value, end=" ")
+            current = current.next
+
+new_ll = LinkedList()
+new_ll.append(10)
+new_ll.append(20)
+new_ll.append(30)
+new_ll.append(40)
+new_ll.append(50)
+
+new_ll.show()
