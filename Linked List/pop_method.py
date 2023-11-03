@@ -27,10 +27,15 @@ class LinkedList:
             
     def pop_first(self):
         popped_node = self.head
-        self.head = self.head.next
-        popped_node.next = None
-        self.length -= 1
-        return popped_node.value
+        if self.length == 1:
+            self.head = None
+            self.tail = None
+            return popped_node.value
+        else:
+            self.head = self.head.next
+            popped_node.next = None
+            self.length -= 1
+            return popped_node.value
     
 new_ll = LinkedList()
 new_ll.append(10)
