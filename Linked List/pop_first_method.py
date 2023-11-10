@@ -30,6 +30,8 @@ class LinkedList:
         if self.length == 1:
             self.head = None
             self.tail = None
+        elif self.length == 0:
+            return None
         else:
             self.head = self.head.next
             popped_node.next = None
