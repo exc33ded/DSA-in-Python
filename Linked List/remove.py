@@ -27,13 +27,13 @@ class LinkedList:
             
     def get(self, index):
         if index == -1:
-            return -1
-        elif index < -1 or index >= self.length:
+            return self.tail
+        if index < -1 or index >= self.length:
             return None
-        else:
-            for _ in range(index):
-                current = current.next
-            return current
+        current = self.head
+        for _ in range(index):
+            current = current.next
+        return current
         
     def pop_first(self):
         popped_node = self.head
@@ -63,3 +63,30 @@ class LinkedList:
             temp.next = None
         self.length -= 1
         return popped_node
+    
+    def remove(self, index):
+        if index >= self.length or index < -1:
+            return None
+        elif index == 0:
+            return self.pop_first()
+        elif index == self.length-1 or index == -1:
+            return self.pop()
+        else:
+            prev_node = self.get(index - 1)
+            popped_node = prev_node.next
+            prev_node.next = popped_node.next
+            popped_node.next = None
+            self.length -= 1
+            return popped_node
+        
+new_ll = LinkedList()
+new_ll.append(10)
+new_ll.append(20)
+new_ll.append(30)
+new_ll.append(40)
+new_ll.append(50)
+new_ll.show()
+print(new_ll.remove(-1))
+print(new_ll.remove(2))
+print(new_ll.remove(10))
+new_ll.show()
