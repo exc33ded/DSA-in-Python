@@ -90,3 +90,34 @@ print(new_ll.remove(-1))
 print(new_ll.remove(2))
 print(new_ll.remove(10))
 new_ll.show()
+
+# Another approch, not functions used        
+    # def remove(self, index):
+    #     if index < 0 or index >= self.length:
+    #         return None
+            
+    #     elif index == 0:
+    #         popped_node = self.head
+    #         if self.length == 1:
+    #             self.head = None
+    #             self.length = None
+    #         else:
+    #             self.head = self.head.next
+    #         popped_node.next = None
+    #         self.length -= 1
+    #         return popped_node
+            
+    #     else:
+    #         temp = self.head
+    #         for _ in range(index - 1):
+    #             temp = temp.next
+    #         popped_node = temp.next
+            
+        
+    #     if popped_node.next is None:
+    #         self.tail = temp
+    #     temp.next = temp.next.next
+    #     popped_node.next = None
+    #     self.length -= 1
+    #     return popped_node
+    
