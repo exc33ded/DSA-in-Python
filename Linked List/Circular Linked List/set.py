@@ -42,6 +42,13 @@ class CSLinkedList:
         for _ in range(index):
             curr = curr.next
         return curr
+    
+    def set_value(self, index, value):
+        temp = self.get(index)
+        if temp:
+            temp.value = value
+            return True
+        return False
         
 csLL = CSLinkedList()
 csLL.append(10)    
@@ -49,6 +56,7 @@ csLL.append(20)
 csLL.append(30)    
 csLL.append(40)    
 csLL.append(50) 
-print(csLL.get(3))
-print(csLL.get(-5))
-print(csLL.get(8))
+csLL.traversal()
+print(csLL.set_value(5, 100))
+print(csLL.set_value(9, 500))
+csLL.traversal()
